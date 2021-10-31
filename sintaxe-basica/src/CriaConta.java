@@ -1,19 +1,38 @@
+public class CriaConta { 
+    public static void main(String[] args) {
+        Conta primeiraConta = new Conta();
+        primeiraConta.saldo = 200; 
+        System.out.println(primeiraConta.saldo); 
 
-public class CriaConta {
-	public static void main(String[] args) {
-		Conta primeiraConta = new Conta();
-		//referiando a conta que criamos;
-		primeiraConta.saldo = 200;
-		//atribuindo um valor ao atributo primeiraConta;
-		System.out.println("Saldo da primeira conta R$"+primeiraConta.saldo);
-				
-		Conta segundaConta = new Conta();
-		segundaConta.saldo = 50;
-		System.out.println("Saldo da segunda conta R$"+segundaConta.saldo);
-		
-		
-		//primeiraConta e segundaConta são referências, quando imprimimos, vemos um código um tanto estranho e isso ocorre pois são referências diferentes.
-		
-		
-	}
+        primeiraConta.saldo += 100;
+        System.out.println(primeiraConta.saldo);
+
+        Conta segundaConta = new Conta();
+        segundaConta.saldo = 300;
+
+        System.out.println("primeira conta tem " + primeiraConta.saldo);
+        System.out.println("segunda conta tem " + segundaConta.saldo);
+
+        segundaConta.agencia = 146;
+        System.out.println(primeiraConta.agencia);
+        System.out.println(primeiraConta.numero);
+
+            System.out.println(segundaConta.agencia);
+
+        segundaConta.agencia = 146;
+        System.out.println("agora a segunda conta está na agencia " + segundaConta.agencia);
+
+        if(primeiraConta == segundaConta) {
+            System.out.println("mesma conta");
+        } else {
+            System.out.println("contas diferentes");
+        }
+
+        System.out.println(primeiraConta);
+        System.out.println(segundaConta);
+    }
 }
+
+
+
+//primeiraConta e segundaConta são referências, quando imprimimos, vemos um código um tanto estranho e isso ocorre pois são referências diferentes.
