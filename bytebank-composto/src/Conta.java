@@ -1,8 +1,20 @@
 public class Conta {
-	double saldo;
-	int agencia;
-	int numero;
-	Cliente titular;
+	private double saldo;
+	private int agencia;
+	private int numero;
+	private Cliente titular;
+	private static int total;
+	//static atribui um valor a classe
+	
+	public Conta(int agencia, int numero) {
+		Conta.total ++;
+		//System.out.println("Total de conta abertas é "+total);
+		this.agencia = agencia;
+		this.numero = numero;
+		//System.out.println("Olá, seja bem vindo ao BancoJava!");
+		//System.out.println("Agência: "+this.agencia);
+		//System.out.println("Conta: "+this.numero);
+	}
 	
 	void deposita(double valor) {
 		
@@ -27,4 +39,45 @@ public class Conta {
 		}
 		return false;
 	}
+	//Getter
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	public int getAgencia() {
+		return agencia;
+	}
+	//Setter
+	public void setAgencia(int agencia) {
+		if (agencia <= 0) {
+			System.out.println("não pode valor menor ou igual a 0");
+			return;
+		}
+		this.agencia = agencia;
+	}
+	
+	public int getNumero() {
+		return numero;
+	}
+	
+	public void setNumero(int numero) {
+		if (numero <= 0 ) {
+			System.out.println("não pode valor menor ou igual a 0");
+			return;
+		}
+		this.numero = numero;
+	}
+	
+	public Cliente getTitular() {
+		return titular;
+	}
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
+	
+	public static int getTotal() {
+		return Conta.total;
+	}
+	
 }
